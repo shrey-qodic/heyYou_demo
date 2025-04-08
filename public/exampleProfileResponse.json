@@ -1,0 +1,62 @@
+{
+    "data": {
+        "plainId": 897377520,
+        "publicContactInfo": {
+            "$type": "com.linkedin.voyager.identity.shared.PublicContactInfo"
+        },
+        "premiumSubscriber": false,
+        "*miniProfile": "urn:li:fs_miniProfile:ACoAADV85PAB-vtD5R0g75cQR-WK8QmAeZ5KU4k",
+        "$type": "com.linkedin.voyager.common.Me"
+    },
+    "included": [
+        {
+            "customPronoun": null,
+            "memorialized": false,
+            "lastName": "Tashwin",
+            "dashEntityUrn": "urn:li:fsd_profile:ACoAADV85PAB-vtD5R0g75cQR-WK8QmAeZ5KU4k",
+            "standardizedPronoun": null,
+            "occupation": "CEO at Iona Tech PH",
+            "objectUrn": "urn:li:member:897377520",
+            "backgroundImage": null,
+            "picture": {
+                "artifacts": [
+                    {
+                        "width": 100,
+                        "fileIdentifyingUrlPathSegment": "100_100/0/1636525063251?e=1697673600&v=beta&t=8yu2jb6G9mykCmgx0_ioBZUgDgTDKHS5Sj-rsZAF2qg",
+                        "expiresAt": 1697673600000,
+                        "height": 100,
+                        "$type": "com.linkedin.common.VectorArtifact"
+                    },
+                    {
+                        "width": 200,
+                        "fileIdentifyingUrlPathSegment": "200_200/0/1636525063251?e=1697673600&v=beta&t=XNC-9WEWoI7VYqXDG9Bf46IkjRow-TKrTY6b6PmgAHc",
+                        "expiresAt": 1697673600000,
+                        "height": 200,
+                        "$type": "com.linkedin.common.VectorArtifact"
+                    },
+                    {
+                        "width": 400,
+                        "fileIdentifyingUrlPathSegment": "400_400/0/1636525063251?e=1697673600&v=beta&t=QO_n34RESmP6D8qXobk_QhAkJHBMOgZbpxxTueJTppk",
+                        "expiresAt": 1697673600000,
+                        "height": 400,
+                        "$type": "com.linkedin.common.VectorArtifact"
+                    },
+                    {
+                        "width": 666,
+                        "fileIdentifyingUrlPathSegment": "800_800/0/1636525063251?e=1697673600&v=beta&t=iDlfDHfFta5VK1AFw4X2-FMYGowK9GboaFdMN7lNX4k",
+                        "expiresAt": 1697673600000,
+                        "height": 666,
+                        "$type": "com.linkedin.common.VectorArtifact"
+                    }
+                ],
+                "rootUrl": "https://media.licdn.com/dms/image/C4E03AQHpCbrHnC4fhQ/profile-displayphoto-shrink_",
+                "$type": "com.linkedin.common.VectorImage"
+            },
+            "$type": "com.linkedin.voyager.identity.shared.MiniProfile",
+            "firstName": "Steven",
+            "entityUrn": "urn:li:fs_miniProfile:ACoAADV85PAB-vtD5R0g75cQR-WK8QmAeZ5KU4k",
+            "publicIdentifier": "steven-tashwin-840643210",
+            "trackingId": "oqM+r2ZbROCHsCImCk/c7Q=="
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+
+# local env files
+.env*.local
+
+
+
+# notes
+
+notes.md
+
+#browser user data
+/user_data
+config.bat
