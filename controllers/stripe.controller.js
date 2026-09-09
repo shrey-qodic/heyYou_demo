@@ -149,7 +149,6 @@ const stripeWebhook = async (req, res) => {
     case 'invoice.payment_failed': {
       const session = event.data.object
       const billingReason = session.billing_reason
-      const metadata = session.subscription_details.metadata
       if (billingReason == 'subscription_cycle') {
         try {
           await updateSubscriptionOnPaymentFailed(session)
