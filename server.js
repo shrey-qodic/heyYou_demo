@@ -73,25 +73,8 @@ app.use((req, res, next) => {
   });
 
   // Check buid status
-  
+
   next();  // Proceed to the next middleware or route handler
-});
-
-// Optional fallthrough error handler
-app.use(function onError(err, req, res, next) {
-  // The error id is attached to `res.sentry` to be returned
-  // and optionally displayed to the user for support.
-  res.statusCode = 500;
-  res.end(res.sentry + "\n");
-});
-
-// Global error handler middleware
-app.use((err, req, res, next) => {
-  // Log the error to Sentry
-  Sentry.captureException(err);
-
-  // Handle the error locally or respond to the client
-  res.status(400).json({ error: "Internal Server Error" });
 });
 
 // TODO: To be removed
@@ -188,8 +171,24 @@ app.use("/api/v1", generateLinkRouter);
 app.use("/api/v1", uitemplatesRouter);
 app.use("/api/v1", insightRouter);
 
-// The error handler must be registered before any other error middleware and after all controllers
-// app.use(Sentry.Handlers.errorHandler());
+// Global error handler. It must sit after every route so route errors reach it.
+app.use((err, req, res, next) => {
+  // A client that disconnects mid-request (an aborted upload) is not a server
+  // error. Log it and stop, because the socket is gone and a write would fail.
+  if (err.type === "request.aborted") {
+    console.log("Request aborted by the client");
+    return;
+  }
+
+  Sentry.captureException(err);
+
+  // If the response already started, hand the error to the default handler.
+  if (res.headersSent) {
+    return next(err);
+  }
+
+  res.status(500).json({ error: "Internal Server Error" });
+});
 
 let port = process.env.PORT || 8080;
 
